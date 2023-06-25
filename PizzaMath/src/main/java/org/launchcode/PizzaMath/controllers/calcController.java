@@ -34,21 +34,28 @@ public class calcController {
         double minSliceCount = customCalculation.getSmallCount() + customCalculation.getMediumCount() + customCalculation.getTeenCount() * 2 + customCalculation.getAdultCount() * 2;
         double minNumberPizzas = minNumberPizzas(minSliceCount);
 
-        for (int i = 0; i < 3; i++) {
-            while (totalPizzaArea/minNumberPizzas >= pizzaSizeArr[i] && totalPizzaArea/minNumberPizzas < pizzaSizeArr[i+1]) {
-                pizzaCountArr[i]++;
-                totalPizzaArea = totalPizzaArea - pizzaSizeArr[i];
-                minNumberPizzas--;
+        while (totalPizzaArea > 0) {
+            for (int i = 0; i <= 3; i++) {
+                while ((totalPizzaArea / minNumberPizzas) + 10 >= pizzaSizeArr[i] && totalPizzaArea / minNumberPizzas < pizzaSizeArr[i + 1] || i == 3) {
+                    if (totalPizzaArea - pizzaSizeArr[i] < pizzaSizeArr[i]/2 && i < 3) {
+                        pizzaCountArr[i+1]++;
+                        totalPizzaArea = totalPizzaArea = pizzaSizeArr[i+1];
+                    } else {
+                        pizzaCountArr[i]++;
+                        totalPizzaArea = totalPizzaArea - pizzaSizeArr[i];
+                    }
+                    minNumberPizzas--;
+                }
             }
-        }
-        if (minSliceCount - (minNumberPizzas * 8) > 0) {
-            for (int k = 0; k < 3; k++) {
-                if (totalPizzaArea <= pizzaSizeArr[k]) {
-                    pizzaCountArr[k]++;
+            if (minSliceCount - (minNumberPizzas * 8) > 0) {
+                for (int k = 0; k < 3; k++) {
+                    if (totalPizzaArea <= pizzaSizeArr[k]) {
+                        pizzaCountArr[k]++;
+                    }
                 }
             }
         }
-
+        model.addAttribute(pizzaCountArr);
         return "result";
     }
 
