@@ -10,12 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class calcController {
-
-    @GetMapping("/customCalc")
-    public String displayCustomCalc() {
-        return "customCalc";
-    }
+public class CalcController {
 
     @PostMapping("/customCalc")
     public String processCustomCalcForm(@ModelAttribute CustomCalulation customCalculation, Errors errors, Model model) {

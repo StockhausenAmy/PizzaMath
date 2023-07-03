@@ -13,12 +13,7 @@
 <body>
 <header>
    <div id="mag"><b>PIZZA</b>MATH</div>
-   <div class="nav">
-      <th:block>
-         <a class="navlink" href="/chainMath">Chain Math</a>
-         <a class="navlink" href="/customCalc">Custom Calc</a>
-      </th:block>
-   </div>
+   <nav th:replace="fragments :: header"></nav>
 </header>
 <main>
    <h1>Welcome to Pizza Math</h1>

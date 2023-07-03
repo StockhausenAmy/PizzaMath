@@ -14,58 +14,66 @@
    <div id="mag"><b>PIZZA</b>MATH</div>
    <div class="nav">
       <th:block>
-         <a class="navlink" href="/chainMath">Chain Math</a>
-         <a class="navlink" href="/customCalc">Custom Calc</a>
+         <a class="navlink" href="/templates/calculator/chainMath.html">Chain Math</a>
+         <a class="navlink" href="/templates/calculator/customCalc.html">Custom Calc</a>
       </th:block>
    </div>
 </header>
 <body>
-<form action='/customCalc' method='POST'>
+<form action='/templates/calculator/customCalc.html' method='POST'>
    <div class="container">
       <div class="row">
          <div class="form-item col-8">
-            <label>Small Pizza Size: </label>
+            <label>Small Pizza Size:
             <input th:field="${customCalculation.smallSize}" />
+            </label>
             <p class="error" th:errors="${customCalculation.smallSize}"></p>
          </div>
          <div class="form-item col-8">
-            <label>Medium Pizza Size: </label>
+            <label>Medium Pizza Size:
             <input th:field="${customCalculation.mediumSize}" />
+            </label>
             <p class="error" th:errors="${customCalculation.mediumSize}"></p>
          </div>
          <div class="form-item col-8">
-            <label>Large Pizza Size: </label>
+            <label>Large Pizza Size:
             <input th:field="${customCalculation.largeSize}" />
+            </label>
             <p class="error" th:errors="${customCalculation.largeSize}"></p>
          </div>
          <div class="form-item col-8">
-            <label>XL Pizza Size: </label>
+            <label>XL Pizza Size:
             <input th:field="${customCalculation.xLargeSize}" />
+            </label>
             <p class="error" th:errors="${customCalculation.xLargeSize}"></p>
          </div>
       </div>
    </div>
 
-   <div th:fragment="humanCountForm" class="container">
+   <div class="container">
       <div class="row">
          <div class="form-item col-8">
-            <label># Small Children (<10): </label>
-            <input th:field="${customCalculation.smallCount}" />
+            <label># Small Children (<10):
+            <input type="text" name="smallCount" th:field="${customCalculation.smallCount}" />
+            </label>
             <p class="error" th:errors="${customCalculation.smallCount}"></p>
          </div>
          <div class="form-item col-8">
-            <label># Medium Children (10-13): </label>
-            <input th:field="${customCalculation.mediumCount}" />
+            <label># Medium Children (10-13):
+            <input type="text" name="mediumCount" th:field="${customCalculation.mediumCount}" />
+            </label>
             <p class="error" th:errors="${customCalculation.mediumCount}"></p>
          </div>
          <div class="form-item col-8">
-            <label># Teens (14-19): </label>
-            <input th:field="${customCalculation.teenCount}" />
+            <label># Teens (14-19):
+            <input type="text" name="teenCount" th:field="${customCalculation.teenCount}" />
+            </label>
             <p class="error" th:errors="${customCalculation.teenCount}"></p>
          </div>
          <div class="form-item col-8">
-            <label># Adults (20+): </label>
-            <input th:field="${customCalculation.adultCount}" />
+            <label># Adults (20+):
+            <input type="text" name="adultCount" th:field="${customCalculation.adultCount}" />
+            </label>
             <p class="error" th:errors="${customCalculation.adultCount}"></p>
          </div>
       </div>
