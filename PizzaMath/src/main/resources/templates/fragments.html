@@ -15,36 +15,61 @@
    <div id="mag"><b>PIZZA</b>MATH</div>
    <div class="nav">
       <th:block>
-         <a class="navlink" href="/chainMath">Chain Math</a>
-         <a class="navlink" href="/customCalc">Custom Calc</a>
+         <a class="nav-link" href="/chainMath/">Chain Math</a>
+         <a class="nav-link" href="/customCalc/">Custom Calc</a>
       </th:block>
    </div>
 </nav>
 
-    <div th:fragment="humanCountForm" class="container">
-        <div class="row">
-            <div class="form-item col-8">
-                <label for="smallChildren"># Small Children (<10): </label>
-                <input th:field="${humanCount.smallChildren}" />
-                <p class="error" th:errors="${humanCount.smallChildren}"></p>
-            </div>
-            <div class="form-item col-8">
-                <label for="mediumChildren"># Medium Children (10-13): </label>
-                <input th:field="${humanCount.mediumChildren}" />
-                <p class="error" th:errors="${humanCount.mediumChildren}"></p>
-            </div>
-            <div class="form-item col-8">
-                <label for="teens"># Teens: </label>
-                <input th:field="${humanCount.teens}" />
-                <p class="error" th:errors="${humanCount.teens}"></p>
-            </div>
-            <div class="form-item col-8">
-                <label for="adults"># Adults: </label>
-                <input th:field="${humanCount.adults}" />
-                <p class="error" th:errors="${humanCount.adults}"></p>
-            </div>
+<div th:fragment="humanCountForm" class="container">
+    <div class="row">
+        <div class="form-item col-8">
+            <label># Small Children (<10):
+                <input type="text" name="smallCount" />
+            </label>
+        </div>
+        <div class="form-item col-8">
+            <label># Medium Children (10-13):
+                <input type="text" name="mediumCount" />
+            </label>
+        </div>
+        <div class="form-item col-8">
+            <label># Teens (14-19):
+                <input type="text" name="teenCount" />
+            </label>
+        </div>
+        <div class="form-item col-8">
+            <label># Adults (20+):
+                <input type="text" name="adultCount" />
+            </label>
         </div>
     </div>
+</div>
+
+<div th:fragment="pizzaSizeForm" class="container">
+    <div class="row">
+        <div class="form-item col-8">
+            <label>Small Pizza Size:
+                <input name="smallSize" />
+            </label>
+        </div>
+        <div class="form-item col-8">
+            <label>Medium Pizza Size:
+                <input name="mediumSize" />
+            </label>
+        </div>
+        <div class="form-item col-8">
+            <label>Large Pizza Size:
+                <input name="largeSize" />
+            </label>
+        </div>
+        <div class="form-item col-8">
+            <label>XL Pizza Size:
+                <input name="xLargeSize" />
+            </label>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

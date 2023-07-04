@@ -10,10 +10,10 @@ public class CalcPageController {
 
     @GetMapping("/customCalc/")
     public String displayCustomCalc() {
-        return "customCalc";
+        return "customCalc.html";
     }
 
     @GetMapping("/chainMath/")
-    public String displayChainMath() { return "chainMath"; }
+    public String displayChainMath() { return "chainMath.html"; }
 
 }
