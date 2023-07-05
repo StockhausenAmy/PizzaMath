@@ -21,6 +21,8 @@ public class CalcController {
         double[] pizzaSizeArr = {smallArea, mediumArea, largeArea, xLargeArea};
         double[] pizzaCountArr = {0, 0, 0, 0};
 
+        System.out.println(1);
+
         double totalPizzaArea = (customCalculation.getSmallCount() * 14.13) +
                 (customCalculation.getMediumCount() * 28.26) +
                 (customCalculation.getTeenCount() * 56.52) +
@@ -29,34 +31,51 @@ public class CalcController {
         double minSliceCount = customCalculation.getSmallCount() + customCalculation.getMediumCount() + customCalculation.getTeenCount() * 2 + customCalculation.getAdultCount() * 2;
         double minNumberPizzas = minNumberPizzas(minSliceCount);
 
+        System.out.println(2);
+
         while (totalPizzaArea > 0) {
-            for (int i = 0; i <= 3; i++) {
-                while ((totalPizzaArea / minNumberPizzas) + 10 >= pizzaSizeArr[i] && totalPizzaArea / minNumberPizzas < pizzaSizeArr[i + 1] || i == 3) {
-                    if (totalPizzaArea - pizzaSizeArr[i] < pizzaSizeArr[i]/2 && i < 3) {
+            for (int i = 0; i < 3; i++) {
+                System.out.println(minNumberPizzas + " min number of pizzas");
+                while ((totalPizzaArea / minNumberPizzas) + 10 >= pizzaSizeArr[i] && (totalPizzaArea / minNumberPizzas) < pizzaSizeArr[i + 1]) {
+                    if (totalPizzaArea - pizzaSizeArr[i] < pizzaSizeArr[i]/2) {
                         pizzaCountArr[i+1]++;
-                        totalPizzaArea = totalPizzaArea = pizzaSizeArr[i+1];
+                        totalPizzaArea = totalPizzaArea - pizzaSizeArr[i+1];
+                        System.out.println(totalPizzaArea + " next size up added");
                     } else {
                         pizzaCountArr[i]++;
                         totalPizzaArea = totalPizzaArea - pizzaSizeArr[i];
+                        System.out.println(totalPizzaArea + " this size added");
                     }
                     minNumberPizzas--;
                 }
+                System.out.println(totalPizzaArea + " area left.");
             }
+            System.out.println(3.2);
+
             if (minSliceCount - (minNumberPizzas * 8) > 0) {
                 for (int k = 0; k < 3; k++) {
                     if (totalPizzaArea <= pizzaSizeArr[k]) {
                         pizzaCountArr[k]++;
+                        totalPizzaArea = totalPizzaArea - pizzaSizeArr[k];
                     }
                 }
             }
         }
-        model.addAttribute(pizzaCountArr);
-        return "result";
+
+        System.out.println(4);
+
+        model.addAttribute("smallPizzas", pizzaCountArr[0]);
+        model.addAttribute("mediumPizzas", pizzaCountArr[1]);
+        model.addAttribute("largePizzas", pizzaCountArr[2]);
+        model.addAttribute("xLargePizzas", pizzaCountArr[3]);
+        System.out.println("Calculator ran.");
+        System.out.println(pizzaCountArr[0] + " small pizzas, " + pizzaCountArr[1] + " medium pizzas, " + pizzaCountArr[2] + " large pizzas, and " + pizzaCountArr[3] + " x-large pizzas.");
+        return "customCalcResult";
     }
 
     private double minNumberPizzas (double minSliceCount) {
         double numberPizzaRec = 0;
-        for (int i = 1; i < 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             if (minSliceCount - (i * 8) >= 0) {
                 numberPizzaRec++;
             }

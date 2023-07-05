@@ -19,13 +19,16 @@
    </div>
 </header>
 <body>
-<form action='/customCalc' method='POST'>
-
-   <div th:replace="~{fragments :: pizzaSizeForm}"></div>
-   <br>
-   <div th:replace="~{fragments :: humanCountForm}"></div>
-
-   <button type='submit'>Calculate</button>
-</form>
+<h3>Results:</h3>
+<p>You should buy</p>
+<p th:text="{$smallPizzas}">no</p>
+<p> small pizzas,</p>
+<p th:text="{$mediumPizzas}">no</p>
+<p> medium pizzas,</p>
+<p th:text="{$largePizzas}">no</p>
+<p> large pizzas,</p>
+<p>and </p>
+<p th:text="{$xLargePizzas}">no</p>
+<p> x-large pizzas.</p>
 </body>
 </html>
