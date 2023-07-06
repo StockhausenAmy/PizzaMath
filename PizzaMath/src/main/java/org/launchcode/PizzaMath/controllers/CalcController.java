@@ -19,7 +19,7 @@ public class CalcController {
         double largeArea = Math.pow(customCalculation.getLargeSize()/2, 2) * 3.14;
         double xLargeArea = Math.pow(customCalculation.getxLargeSize()/2, 2) * 3.14;
         double[] pizzaSizeArr = {smallArea, mediumArea, largeArea, xLargeArea};
-        double[] pizzaCountArr = {0, 0, 0, 0};
+        int[] pizzaCountArr = {0, 0, 0, 0};
 
         System.out.println(1);
 
@@ -36,7 +36,7 @@ public class CalcController {
         while (totalPizzaArea > 0) {
             for (int i = 0; i < 3; i++) {
                 System.out.println(minNumberPizzas + " min number of pizzas");
-                while ((totalPizzaArea / minNumberPizzas) + 10 >= pizzaSizeArr[i] && (totalPizzaArea / minNumberPizzas) < pizzaSizeArr[i + 1]) {
+                while ((i==2 && totalPizzaArea > 0) || ((totalPizzaArea / minNumberPizzas) + 10 >= pizzaSizeArr[i] && (totalPizzaArea / minNumberPizzas) < pizzaSizeArr[i + 1])) {
                     if (totalPizzaArea - pizzaSizeArr[i] < pizzaSizeArr[i]/2) {
                         pizzaCountArr[i+1]++;
                         totalPizzaArea = totalPizzaArea - pizzaSizeArr[i+1];

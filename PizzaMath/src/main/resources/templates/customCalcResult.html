@@ -21,14 +21,9 @@
 <body>
 <h3>Results:</h3>
 <p>You should buy</p>
-<p th:text="{$smallPizzas}">no</p>
-<p> small pizzas,</p>
-<p th:text="{$mediumPizzas}">no</p>
-<p> medium pizzas,</p>
-<p th:text="{$largePizzas}">no</p>
-<p> large pizzas,</p>
-<p>and </p>
-<p th:text="{$xLargePizzas}">no</p>
-<p> x-large pizzas.</p>
+<p th:text="${smallPizzas + ' small pizzas,'}"></p>
+<p th:text="${mediumPizzas + ' medium pizzas,'}"></p>
+<p th:text="${largePizzas + ' large pizzas, and'}"></p>
+<p th:text="${xLargePizzas + ' x-large pizzas.'}"></p>
 </body>
 </html>
