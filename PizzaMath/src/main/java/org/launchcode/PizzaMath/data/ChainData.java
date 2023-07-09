@@ -8,15 +8,4 @@ public class ChainData {
 
     public double[] papaJohns = {9.5, 11.5, 13.5, 15.5};
 
-    public ChainData(double[] pizzaHut) {
-        this.pizzaHut = pizzaHut;
-    }
-
-    public double[] getPizzaHut() {
-        return pizzaHut;
-    }
-
-    public void setPizzaHut(double[] pizzaHut) {
-        this.pizzaHut = pizzaHut;
-    }
 }
