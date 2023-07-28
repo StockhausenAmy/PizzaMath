@@ -2,6 +2,9 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="org.launchcode.PizzaMath" target="17" />
+      <module name="org.launchcode.PizzaMath.main" target="17" />
+      <module name="org.launchcode.PizzaMath.test" target="17" />
       <module name="PizzaMath.PizzaMath.main" target="17" />
       <module name="PizzaMath.PizzaMath.test" target="17" />
     </bytecodeTargetLevel>
