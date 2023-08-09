@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head th:replace="~{fragments :: head}"></head>
 <body>
 <header>
    <nav th:replace="~{fragments :: header}"></nav>
 </header>
 <main>
-   <h1>Welcome to Pizza Math</h1>
+   <div class="container">
+      <br>
+      <h2>Do you need to know how many pizzas to buy for a group?</h2>
+      <br>
+      <h4>If you're buying pizza from a nationwide chain, select Chain Math above. If you're buying from a mom 'n pop store, choose Custom Calc.</h4>
+      <br>
+   </div>
 </main>
 </body>
 </html>

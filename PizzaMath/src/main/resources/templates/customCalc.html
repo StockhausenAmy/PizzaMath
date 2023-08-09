@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-<header>
-   <div class="nav">
-      <th:block>
-         <nav th:replace="~{fragments :: header}"></nav>
-      </th:block>
-   </div>
-</header>
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
 <body>
+<br>
+<br>
 <div class="container-lg">
    <form action='/customCalc' method='POST'>
       <h4 class="legend">Enter pizza sizes:</h4>
@@ -17,7 +13,7 @@
       <h4 class="legend">Enter the number of people eating pizza:</h4>
       <div th:replace="~{fragments :: humanCountForm}"></div>
 
-      <button type='submit'>Calculate</button>
+      <button type='submit' class="btn btn-outline-primary">Calculate</button>
    </form>
 </div>
 </body>

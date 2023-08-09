@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-<header>
-   <div class="nav">
-      <th:block>
-         <nav th:replace="~{fragments :: header}"></nav>
-      </th:block>
-   </div>
-</header>
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
 <body>
 <div class="container">
    <h3>You should buy:</h3>
