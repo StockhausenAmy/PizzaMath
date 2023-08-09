@@ -1,11 +1,8 @@
 package org.launchcode.PizzaMath.models;
-import org.launchcode.PizzaMath.data.ChainData;
 
 public class ChainCalculation extends CustomCalulation {
 
     private String chainName;
-
-    ChainData chainData;
 
     public ChainCalculation(String chainName) {
 
@@ -13,22 +10,16 @@ public class ChainCalculation extends CustomCalulation {
 
         switch (chainName) {
             case "pizzaHut" -> {
-                this.setSmallSize(chainData.pizzaHut[0]);
-                this.setMediumSize(chainData.pizzaHut[1]);
-                this.setLargeSize(chainData.pizzaHut[2]);
-                this.setxLargeSize(chainData.pizzaHut[3]);
+                this.setSmallSize(10.0);
+                this.setMediumSize(12.0);
+                this.setLargeSize(14.0);
+                this.setxLargeSize(0.0);
             }
-            case "dominos" -> {
-                this.setSmallSize(chainData.dominos[0]);
-                this.setMediumSize(chainData.dominos[1]);
-                this.setLargeSize(chainData.dominos[2]);
-                this.setxLargeSize(chainData.dominos[3]);
-            }
-            case "papaJohns" -> {
-                this.setSmallSize(chainData.papaJohns[0]);
-                this.setMediumSize(chainData.papaJohns[1]);
-                this.setLargeSize(chainData.papaJohns[2]);
-                this.setxLargeSize(chainData.papaJohns[3]);
+            case "dominos", "papaJohns" -> {
+                this.setSmallSize(10.0);
+                this.setMediumSize(12.0);
+                this.setLargeSize(14.0);
+                this.setxLargeSize(16.0);
             }
         }
     }
