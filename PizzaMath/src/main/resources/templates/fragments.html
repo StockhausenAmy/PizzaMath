@@ -12,7 +12,7 @@
 </head>
 <body>
 <nav th:fragment="header">
-   <div id="mag"><b>PIZZA</b>MATH</div>
+   <div id="mag"><h1><b>PIZZA MATH</b></h1></div>
    <div class="nav">
       <th:block>
          <a class="nav-link" href="/chainMath/">Chain Math</a>
@@ -23,23 +23,23 @@
 
 <div th:fragment="humanCountForm" class="container">
     <div class="row">
-        <div class="form-item col-8">
-            <label># Small Children (<10):
+        <div class="mb-3">
+            <label class="form-label"># Small Children (<10):
                 <input type="text" name="smallCount" />
             </label>
         </div>
-        <div class="form-item col-8">
-            <label># Medium Children (10-13):
+        <div class="mb-3">
+            <label class="form-label"># Medium Children (10-13):
                 <input type="text" name="mediumCount" />
             </label>
         </div>
-        <div class="form-item col-8">
-            <label># Teens (14-19):
+        <div class="mb-3">
+            <label class="form-label"># Teens (14-19):
                 <input type="text" name="teenCount" />
             </label>
         </div>
-        <div class="form-item col-8">
-            <label># Adults (20+):
+        <div class="mb-3">
+            <label class="form-label"># Adults (20+):
                 <input type="text" name="adultCount" />
             </label>
         </div>
@@ -48,23 +48,23 @@
 
 <div th:fragment="pizzaSizeForm" class="container">
     <div class="row">
-        <div class="form-item col-8">
-            <label>Small Pizza Size:
+        <div class="mb-3">
+            <label class="form-label">Small Pizza Size:
                 <input name="smallSize" />
             </label>
         </div>
-        <div class="form-item col-8">
-            <label>Medium Pizza Size:
+        <div class="mb-3">
+            <label class="form-label">Medium Pizza Size:
                 <input name="mediumSize" />
             </label>
         </div>
-        <div class="form-item col-8">
-            <label>Large Pizza Size:
+        <div class="mb-3">
+            <label class="form-label">Large Pizza Size:
                 <input name="largeSize" />
             </label>
         </div>
-        <div class="form-item col-8">
-            <label>XL Pizza Size:
+        <div class="mb-3">
+            <label class="form-label">XL Pizza Size:
                 <input name="xLargeSize" />
             </label>
         </div>
